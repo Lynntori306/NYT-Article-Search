@@ -1,12 +1,25 @@
-$("div.form-group").text();
+$(document).ready(function () {
+    $("#submit").on("click", function () {
+        let userSearch = $("#exampleFormControlInput1").val();
+        console.log(userSearch);
+        var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + userSearch + "&api-key=EJBRr5XsjhnaGa8fZ87bNs1mfrv2sRYj";
 
-var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=EJBRr5XsjhnaGa8fZ87bNs1mfrv2sRYj";
+        $
+            .ajax({
 
-$
-.ajax({
+                url: queryURL,
+                method: "GET"
 
-    url: queryURL,
-    method: "GET"
+            }).then(function (response) {
+                console.log(response);
+            });    
 
-}).then(function(response) {
-    
+
+    });        
+
+
+
+
+
+
+});
